@@ -13,14 +13,17 @@ class Stack:
         new_node.next_node = self.top
         self.top = new_node
 
+    def pop(self):
+        remove = self.top
+        self.top = self.top.next_node
+        return remove.data
 
-
-node1 = Node('data1')
-
-
-stack = Stack(node1)
-stack.push({'id': 1})
-
-node2 = Node({'id': 2})
-node1.next_node = node2
-print(node1.data)
+# node1 = Node('data1')
+#
+#
+# stack = Stack(node1)
+# stack.push({'id': 1})
+#
+# node2 = Node({'id': 2})
+# node1.next_node = node2
+# print(node1.data)
