@@ -27,3 +27,11 @@ class TestStack(unittest.TestCase):
         assert stack.top.data == 'data3'
         assert stack.top.next_node.data == 'data2'
         assert stack.top.next_node.next_node.data == 'data1'
+
+    def test_stack_pop(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        data = stack.pop()
+        assert stack.top.data == 'data1'
+        assert data == 'data2'
