@@ -1,6 +1,7 @@
 import unittest
 from src.datastr import Node, Stack
 from src.custom_gueue import Queue
+from src.linked_list import LinkedList
 
 
 class TestNode(unittest.TestCase):
@@ -58,3 +59,14 @@ class TestQueue(unittest.TestCase):
         assert queue1.dequeue() == 'data2'
         assert queue1.dequeue() == 'data3'
         assert queue1.dequeue() is None
+
+
+class TestLinkedList(unittest.TestCase):
+    """Тест класса LinkedList"""
+    def test_linkedlist(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1})
+        ll.insert_at_end({'id': 2})
+        ll.insert_at_end({'id': 3})
+        ll.insert_beginning({'id': 0})
+        assert ll.print_ll() == "{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"
