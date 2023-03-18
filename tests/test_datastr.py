@@ -1,4 +1,4 @@
-from src.datastr import Node, Stack
+from datastruct.stack import Node, Stack
 
 
 def test_node_init():

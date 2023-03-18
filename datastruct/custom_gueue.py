@@ -1,15 +1,16 @@
-class Node:
-    def __init__(self, data, next_node=None):
-        self.data = data
-        self.next_node = next_node
-
+from typing import Any
+from datastruct.node import Node
 
 class Queue:
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail
 
-    def enqueue(self, data):
+    def __repr__(self):
+        return f"Queue('head'={self.head}, 'tail'={self.tail})"
+
+    def enqueue(self, data: Any):
+        """Добавляет данные в конец очереди"""
         new_node = Node(data)
         if self.head == None:
             self.head = new_node
@@ -19,6 +20,7 @@ class Queue:
             self.tail = new_node
 
     def dequeue(self):
+        """Удаляет из очереди крайний левый элемент (первый добавленный)"""
         if self.head is None:
             return None
         dequeue_element = self.head
